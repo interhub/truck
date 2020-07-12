@@ -1,0 +1,1 @@
+export const LOCATION= 'http://localhost:7000/'
