@@ -41,7 +41,8 @@ const Tab_1 = (props: any) => {
             <View style={{ flex: 2, alignItems: 'flex-start' }}>
                 <View style={{ backgroundColor: '#383838', height: '100%', width: '80%' }}>
                     <Input
-                        label={props.user.phone === '' ? '' : 'Телефон'}
+                      maxLength={props.user.phone.includes('+') ? 12 : 11}
+                      label={props.user.phone === '' ? '' : 'Телефон'}
                         value={props.user.phone} onChangeText={(val) => {
                             setUser('phone', val)
                         }} inputStyle={{ color: '#fff' }} placeholder={'Телефон *'} placeholderTextColor={'#999'} />

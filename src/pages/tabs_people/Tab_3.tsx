@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   DatePickerAndroid,
   View,
@@ -17,7 +17,15 @@ import {connect} from 'react-redux';
 import {SetScreen, SetLoader, SetOrder} from '../../store/actions';
 import {Rating, AirbnbRating, Button, Divider, Slider} from 'react-native-elements';
 import MyIcon from '../../comps/MyIcon';
-import TextInputMask from 'react-native-text-input-mask';
+
+import timePicker from 'react-native-24h-timepicker';
+import dateTimePicker from '@react-native-community/datetimepicker';
+import moment from 'moment'
+
+const TimePicker: any = timePicker;
+const DateTimePicker: any = dateTimePicker;
+
+// import TextInputMask from 'react-native-text-input-mask';
 
 const Tab_3 = (props: any) => {
 
@@ -32,7 +40,38 @@ const Tab_3 = (props: any) => {
     }
   };
 
+
+  const picker: any = useRef();
+  const [openDate, setOpenDate] = useState(false);
+
   return <View style={styles.back}>
+
+    <TimePicker
+      minuteInterval={5}
+      textCancel={'Назад'}
+      textConfirm={'Принять'}
+      ref={picker}
+      onCancel={() => picker.current.close()}
+      onConfirm={(H: any, M: any): void => {
+        setOrderFunc('time', `${H}:${M}`);
+        picker.current.close();
+      }
+      }
+    />
+    {openDate && <DateTimePicker
+      display={'calendar'}
+      value={new Date()}
+      mode={'date'}
+      is24Hour={true}
+      minimumDate={new Date()}
+      onChange={(e: any) => {
+        setOpenDate(false);
+        // startEnd('start', e.nativeEvent.timestamp);
+        setOrderFunc('date', moment(e.nativeEvent.timestamp).format('DD-MM-YYYY'))//new Date(e.nativeEvent.timestamp).toLocaleDateString());
+      }}
+    />}
+
+
     <ScrollView
       keyboardShouldPersistTaps={'handled'}
       style={{height: '100%'}}>
@@ -96,17 +135,21 @@ const Tab_3 = (props: any) => {
             <Text style={{fontSize: 20, width: '70%', padding: 5}}>
               Дата*:
             </Text>
+
+            <Text style={{fontSize: 20}} onPress={() => setOpenDate(true)}>
+              {props.order.date == '' ? 'Узказать дату' : props.order.date}
+            </Text>
+
             {/*<TextInputMask*/}
             {/*  value={props.order.date}*/}
             {/*  onChangeText={(formatted: any, extracted: any) => {*/}
             {/*    setOrderFunc('date', formatted);*/}
             {/*  }}*/}
-            {/*  underlineColorAndroid={'#999'}*/}
+            {/*  underlineColorAndroid={'#222'}*/}
             {/*  style={{width: 80}}*/}
             {/*  placeholder={'00.00.0000'}*/}
             {/*  mask={'[00].[00].[0000]'}*/}
             {/*/>*/}
-
           </View>
           <View style={{
             width: '100%',
@@ -115,9 +158,13 @@ const Tab_3 = (props: any) => {
             alignItems: 'center',
             padding: 5
           }}>
-            <Text style={{fontSize: 20, width: '70%', padding: 5}}>
+            <Text style={{fontSize: 20, width: '50%', padding: 5}}>
               Время*:
             </Text>
+            <Text style={{fontSize: 20}} onPress={() => picker.current.open()}>
+              {props.order.time == '' ? 'Указать время' : props.order.time}
+            </Text>
+
             {/*<TextInputMask*/}
             {/*  value={props.order.time}*/}
             {/*  onChangeText={(formatted: any, extracted: any) => {*/}

@@ -49,22 +49,22 @@ const Tab_1 = (props: any) => {
             }} inputStyle={{color: '#fff'}}
             placeholder={'Имя *'}
             placeholderTextColor={'#999'}/>
-          <Divider style={{marginHorizontal: 10}}/>
+          {/*<Divider style={{marginHorizontal: 10}}/>*/}
         </View>
       </View>
       <View style={{flex: 2}}></View>
       {/* PHONE  */}
       <View style={{flex: 2, alignItems: 'flex-start'}}>
         <View style={{backgroundColor: '#383838', height: '100%', width: '80%'}}>
-          {/*<Input*/}
-          {/*  label={props.user.phone === '' ? '' : 'Телефон'}*/}
-          {/*  value={props.user.phone} onChangeText={(val) => {*/}
-          {/*  setUser('phone', val);*/}
-          {/*}}*/}
-          {/*  inputStyle={{color: '#fff'}}*/}
-          {/*  placeholder={'Телефон *'}*/}
-          {/*  placeholderTextColor={'#999'}/>*/}
-
+          <Input
+            maxLength={props.user.phone.includes('+') ? 12 : 11}
+            label={props.user.phone === '' ? '' : 'Телефон'}
+            value={props.user.phone} onChangeText={(val) => {
+            setUser('phone', val);
+          }}
+            inputStyle={{color: '#fff'}}
+            placeholder={'Телефон *'}
+            placeholderTextColor={'#999'}/>
 
           {/*<TextInputMask*/}
           {/*  value={props.user.phone}*/}
@@ -77,7 +77,7 @@ const Tab_1 = (props: any) => {
           {/*  placeholder={'*Телефон'}*/}
           {/*  mask={'[0] [000] [000] [00] [00]'}*/}
           {/*/>*/}
-          <Divider style={{marginHorizontal: 10, marginTop: -5}}/>
+          {/*<Divider style={{marginHorizontal: 10, marginTop: -5}}/>*/}
         </View>
       </View>
       <View style={{flex: 2}}/>
