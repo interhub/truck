@@ -22,7 +22,7 @@ const Cupon = (props: any) => {
       if (res.result === true) {
         props.SetSale(res.num);
         AsyncStorage.setItem('sale', (res.num));
-        AlertSuccess('успешно', '-' + res.num + 'Р на следущий заказ');
+        AlertSuccess('Успешно!', '-' + res.num + 'Р на следущий заказ ♥');
         setText('');
       } else {
         alert('не верно');
@@ -59,7 +59,7 @@ const Cupon = (props: any) => {
     <View style={{backgroundColor: '#C4C4C4', flex: 1, justifyContent: 'center'}}>
       <Input
         value={text}
-        onChangeText={(e:any) => setText(e)}
+        onChangeText={(e: any) => setText(e)}
         containerStyle={{alignItems: 'center'}}
         inputContainerStyle={{width: '75%'}}
         inputStyle={{backgroundColor: '#808080', height: 60, color: '#fff'}}

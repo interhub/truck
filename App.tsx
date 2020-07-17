@@ -53,25 +53,6 @@ if (
 
 const App: React.FC = (props: any) => {
 
-  //обработчик возврат на главную
-  // useEffect(() => {
-  //   //установка бек хендлера
-  //   const backAction = () => {
-  //     if (props.menu === true) {
-  //       props.SetMenu(false);
-  //       return true;
-  //     } else {
-  //       BackHandler.exitApp();
-  //       return true;
-  //     }
-  //   };
-  //   const backHandler = BackHandler.addEventListener(
-  //     'hardwareBackPress',
-  //     backAction
-  //   );
-  //   return () => backHandler.remove();
-  // }, []);
-
   const setStart = () => {
     //функция установки данных из памяти телефона
     //данные заказа, если были введены но не заказаны

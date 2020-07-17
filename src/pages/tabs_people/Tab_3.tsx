@@ -20,7 +20,7 @@ import MyIcon from '../../comps/MyIcon';
 
 import timePicker from 'react-native-24h-timepicker';
 import dateTimePicker from '@react-native-community/datetimepicker';
-import moment from 'moment'
+import moment from 'moment';
 
 const TimePicker: any = timePicker;
 const DateTimePicker: any = dateTimePicker;
@@ -67,7 +67,7 @@ const Tab_3 = (props: any) => {
       onChange={(e: any) => {
         setOpenDate(false);
         // startEnd('start', e.nativeEvent.timestamp);
-        setOrderFunc('date', moment(e.nativeEvent.timestamp).format('DD-MM-YYYY'))//new Date(e.nativeEvent.timestamp).toLocaleDateString());
+        setOrderFunc('date', moment(e.nativeEvent.timestamp).format('DD-MM-YYYY'));//new Date(e.nativeEvent.timestamp).toLocaleDateString());
       }}
     />}
 
@@ -132,11 +132,11 @@ const Tab_3 = (props: any) => {
             alignItems: 'center',
             padding: 5
           }}>
-            <Text style={{fontSize: 20, width: '70%', padding: 5}}>
+            <Text style={{fontSize: 20, width: '50%', padding: 5}}>
               Дата*:
             </Text>
 
-            <Text style={{fontSize: 20}} onPress={() => setOpenDate(true)}>
+            <Text style={{fontSize: 20, textDecorationLine: 'underline'}} onPress={() => setOpenDate(true)}>
               {props.order.date == '' ? 'Узказать дату' : props.order.date}
             </Text>
 
@@ -161,7 +161,7 @@ const Tab_3 = (props: any) => {
             <Text style={{fontSize: 20, width: '50%', padding: 5}}>
               Время*:
             </Text>
-            <Text style={{fontSize: 20}} onPress={() => picker.current.open()}>
+            <Text style={{fontSize: 20, textDecorationLine: 'underline'}} onPress={() => picker.current.open()}>
               {props.order.time == '' ? 'Указать время' : props.order.time}
             </Text>
 

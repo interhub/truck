@@ -226,11 +226,11 @@ const Tab_3 = (props: any) => {
             alignItems: 'center',
             padding: 5
           }}>
-            <Text style={{fontSize: 20, width: '70%', padding: 5}}>
+            <Text style={{fontSize: 20, width: '50%', padding: 5}}>
               Дата*:
             </Text>
 
-            <Text style={{fontSize: 20}} onPress={() => setOpenDate(true)}>
+            <Text style={{fontSize: 20,textDecorationLine:'underline'}} onPress={() => setOpenDate(true)}>
               {props.order.date == '' ? 'Узказать дату' : props.order.date}
             </Text>
 
@@ -255,20 +255,10 @@ const Tab_3 = (props: any) => {
             <Text style={{fontSize: 20, width: '50%', padding: 5}}>
               Время*:
             </Text>
-            <Text style={{fontSize: 20}} onPress={() => picker.current.open()}>
+            <Text style={{fontSize: 20,textDecorationLine:'underline'}} onPress={() => picker.current.open()}>
               {props.order.time == '' ? 'Указать время' : props.order.time}
             </Text>
 
-            {/*<TextInputMask*/}
-            {/*  value={props.order.time}*/}
-            {/*  onChangeText={(formatted: any, extracted: any) => {*/}
-            {/*    setOrderFunc('time', formatted);*/}
-            {/*  }}*/}
-            {/*  underlineColorAndroid={'#222'}*/}
-            {/*  style={{width: 80}}*/}
-            {/*  mask={'[00]:[00]'}*/}
-            {/*  placeholder={'00:00'}*/}
-            {/*/>*/}
           </View>
 
         </View>
