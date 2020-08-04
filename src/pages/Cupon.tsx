@@ -15,22 +15,27 @@ const Cupon = (props: any) => {
         AlertConnect(sendData);
     };
     const sendData = async () => {
-        await fetch(location + '/fire', {
+        let result = await fetch(location + '/fire', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json;charset=utf-8'
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             },
-            body: {
+            body: JSON.stringify({
                 text,
                 token: props.token
-            }
+            })
         })
             .then((res) => res.json())
             .then((res) => {
                 if (res.result === true) {
-                    alert('Уведомления включены ☻')
+                    return true
                 }
             })
+        if (result) {
+            return alert('Уведомления включены ☻')
+        }
+        console.log(result, 'reulst')
         await fetch(location + '/cupon/' + text)
             .then((res) => res.json())
             .then((res) => {
