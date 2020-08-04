@@ -21,7 +21,9 @@
             "**/*"
         ],
         "ios": {
-            "supportsTablet": true
+            "supportsTablet": true,
+            "bundleIdentifier": "com.interhub.truck",
+            "buildNumber": "2"
         },
         "web": {
             "favicon": "./assets/favicon.png"

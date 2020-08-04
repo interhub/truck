@@ -1,4 +1,4 @@
-import { SET_MENU, SET_SCREEN, SET_LOADER, SET_ORDER, SET_USER, SET_SALE, SET_ORDERS } from "./actionNames"
+import {SET_MENU, SET_SCREEN, SET_LOADER, SET_ORDER, SET_USER, SET_SALE, SET_ORDERS, SET_TOKEN} from "./actionNames"
 
 export const SetMenu = (menu: boolean) => {
     return {
@@ -46,5 +46,12 @@ export const SetOrders = (orders: any) => {
     return {
         type: SET_ORDERS,
         orders: orders
+    }
+}
+
+export const SetToken = (token: string) => {
+    return {
+        type: SET_TOKEN,
+        token
     }
 }

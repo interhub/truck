@@ -39,6 +39,7 @@ import {START, INFO, FEED, CUP, ORDER_CAR, ORDER_PEOPLE, ITOG, LIST} from './src
 import Loader from './src/comps/Loader';
 
 import List from './src/pages/List';
+import AddToken from "./src/comps/AddToken";
 
 export const H = Dimensions.get('window').height;
 export const W = Dimensions.get('window').width;
@@ -87,6 +88,7 @@ const App: React.FC = (props: any) => {
 
   return (
     <ScrollView keyboardShouldPersistTaps={'handled'} contentContainerStyle={{flex: 1, minHeight: H - 30}}>
+      <AddToken/>
       <View style={{flex: 1}}>
         <StatusBar backgroundColor={'#383838'}/>
         {/* ЭКРАНЫ */}
