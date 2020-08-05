@@ -1,39 +1,40 @@
 {
-    "expo": {
-        "android": {
-            "package": "com.interhub.truck",
-            "versionCode": 2
-        },
-        "name": "Грузоперевозки в Калининграде",
-        "slug": "truck",
-        "version": "2.0.0",
-        "orientation": "portrait",
-        "icon": "./assets/icon.png",
-        "splash": {
-            "image": "./src/img/load.png",
-            "resizeMode": "cover",
-            "backgroundColor": "#00ff0c"
-        },
-        "updates": {
-            "fallbackToCacheTimeout": 0
-        },
-        "assetBundlePatterns": [
-            "**/*"
-        ],
-        "ios": {
-            "supportsTablet": true,
-            "bundleIdentifier": "com.interhub.truck",
-            "buildNumber": "2"
-        },
-        "web": {
-            "favicon": "./assets/favicon.png"
-        },
-        "packagerOpts": {
-            "sourceExts": [
-                "ts",
-                "tsx"
-            ],
-            "transformer": "node_modules/react-native-typescript-transformer/index.js"
-        }
-    }
+  "expo": {
+    "android": {
+      "package": "com.interhub.truck",
+      "versionCode": 5,
+      "useNextNotificationsApi": true
+    },
+    "name": "Грузоперевозки в Калининграде",
+    "slug": "truck",
+    "version": "4.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./src/img/load.png",
+      "resizeMode": "cover"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.interhub.truck",
+      "buildNumber": "3"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "packagerOpts": {
+      "sourceExts": [
+        "ts",
+        "tsx"
+      ],
+      "transformer": "node_modules/react-native-typescript-transformer/index.js"
+    },
+    "description": ""
+  }
 }
