@@ -10,7 +10,7 @@ target 'truck' do
 
   use_react_native!(:path => config["reactNativePath"])
 
-  use_frameworks!
+  # use_frameworks!
   pod 'RNInputMask', :path => '../node_modules/react-native-text-input-mask/ios/InputMask'
 
   # Uncomment the code below to enable Flipper.

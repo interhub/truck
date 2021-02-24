@@ -25,21 +25,21 @@ Notifications.setNotificationHandler({
     }),
 });
 
-function AddToken({SetToken}) {
+function AddToken({SetToken}: any) {
     const [expoPushToken, setExpoPushToken] = useState('');
     const [notification, setNotification] = useState(false);
-    const notificationListener = useRef();
-    const responseListener = useRef();
+    const notificationListener: any = useRef();
+    const responseListener: any = useRef();
 
     useEffect(() => {
-        registerForPushNotificationsAsync().then(token => {
+        registerForPushNotificationsAsync().then((token: any) => {
             setExpoPushToken(token)
             SetToken(token)
             // console.log(token, "TOKEN")
         });
 
         // This listener is fired whenever a notification is received while the app is foregrounded
-        notificationListener.current = Notifications.addNotificationReceivedListener(notification => {
+        notificationListener.current = Notifications.addNotificationReceivedListener((notification: any) => {
             setNotification(notification);
         });
 
@@ -85,7 +85,7 @@ async function registerForPushNotificationsAsync() {
         // console.log(token);
         // registration(token)
     } else {
-        alert('Must use physical device for Push Notifications');
+        // alert('Must use physical device for Push Notifications');
     }
 
     if (Platform.OS === 'android') {
