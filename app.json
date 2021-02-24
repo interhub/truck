@@ -1,40 +1,26 @@
 {
   "expo": {
-    "android": {
-      "package": "com.interhub.truck",
-      "versionCode": 6,
-      "useNextNotificationsApi": true
+    "_internal": {
+      "isDebug": false,
+      "projectRoot": "/Users/macbook/Desktop/Проекты/2020/truck/truck",
+      "dynamicConfigPath": null,
+      "staticConfigPath": null,
+      "packageJsonPath": "/Users/macbook/Desktop/Проекты/2020/truck/truck/package.json"
     },
-    "name": "Грузоперевозки в Калининграде",
+    "name": "truck",
     "slug": "truck",
-    "version": "4.1.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./src/img/load.png",
-      "resizeMode": "cover"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
+    "version": "1.0.0",
+    "sdkVersion": "40.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
     ],
+    "android": {
+      "package": "com.interhub.truck"
+    },
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.interhub.truck",
-      "buildNumber": "3"
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "packagerOpts": {
-      "sourceExts": [
-        "ts",
-        "tsx"
-      ],
-      "transformer": "node_modules/react-native-typescript-transformer/index.js"
-    },
-    "description": ""
+      "bundleIdentifier": "com.interhub.truck"
+    }
   }
 }
