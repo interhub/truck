@@ -18,7 +18,7 @@ import {
   AsyncStorage
 } from 'react-native';
 
-import {Divider} from 'react-native-elements';
+import {Divider, } from 'react-native-elements';
 
 import {connect, Provider} from 'react-redux';
 import store from './src/store/store';
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '130%',
     backgroundColor: '#808080',
-    zIndex: 10000
+    zIndex: 1000
   }
 });
 
@@ -170,4 +170,3 @@ const ProviderApp: React.FC = () => {
 };
 
 export default ProviderApp;
-
