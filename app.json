@@ -2,7 +2,7 @@
   "expo": {
     "android": {
       "package": "com.interhub.truck",
-      "versionCode": 5,
+      "versionCode": 6,
       "useNextNotificationsApi": true
     },
     "name": "Грузоперевозки в Калининграде",
